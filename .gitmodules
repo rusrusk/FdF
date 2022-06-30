@@ -1,0 +1,6 @@
+[submodule "libft_FdF"]
+	path = libft_FdF
+	url = https://github.com/rusrusk/42libft.git
+[submodule "ft_printf_FdF"]
+	path = ft_printf_FdF
+	url = git@github.com:rusrusk/ft_printf.git
