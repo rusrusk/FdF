@@ -6,7 +6,7 @@
 /*   By: rkultaev <rkultaev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 16:34:57 by rkultaev          #+#    #+#             */
-/*   Updated: 2022/06/30 18:13:31 by rkultaev         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:33:17 by rkultaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ static int	key_z_scale(int key, t_fdf *content)
 
 int	keyboard_hook(int key, t_fdf *content)
 {
-	printf("%d\n", key);
 	if (key == UP || key == DOWN || key == LEFT || key == RIGHT)
 		key_move(key, content);
 	else if (key == ANGLE_UP || key == ANGLE_DOWN || key == ANGLE_LEFT

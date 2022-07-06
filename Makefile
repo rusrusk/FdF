@@ -6,7 +6,7 @@
 #    By: rkultaev <rkultaev@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/26 15:34:15 by rkultaev          #+#    #+#              #
-#    Updated: 2022/06/30 20:11:17 by rkultaev         ###   ########.fr        #
+#    Updated: 2022/07/04 10:54:39 by rkultaev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ clean :
 	
 fclean : clean
 	rm -f $(NAME)
-	make clean -C libft_FdF/
+	make fclean -C libft_FdF/
 
 re : fclean all
 

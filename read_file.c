@@ -6,22 +6,11 @@
 /*   By: rkultaev <rkultaev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 15:05:57 by rkultaev          #+#    #+#             */
-/*   Updated: 2022/06/30 19:43:38 by rkultaev         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:15:59 by rkultaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include <sys/time.h>
-
-// long long    get_time(void)
-// {
-//     struct timeval    tv;
-//     long long        milliseconds;
-
-//     gettimeofday(&tv, NULL);
-//     milliseconds = tv.tv_sec * 1000LL + tv.tv_usec / 1000;
-//     return (milliseconds);
-// }
 
 int	find_height(char	*file)
 {
@@ -53,12 +42,6 @@ int	find_width(char *file)
 		error_message("Error");
 	line = get_next_line(file_descriptor);
 	width = ft_count_words(line, ' ');
-	// while (line)
-	// {
-	// 	free(line);
-	// 	line  = get_next_line(file_descriptor);
-	// 	//printf("%d\n", height);
-	// }
 	free(line);
 	close(file_descriptor);
 	return (width);
@@ -69,11 +52,8 @@ void	fill_z_axis(int *z_line, char *line)
 	char	**ptr;
 	int		i;
 	int		j;
-	
-	// fprintf(stderr, "%s", line);
-	// long long time = get_time();
+
 	ptr = ft_split(line, 32);
-	// printf("split time diff %lld\n", get_time() - time);
 	i = 0;
 	while (ptr[i])
 	{
@@ -100,9 +80,7 @@ void	read_file(char *file, t_fdf *content)
 	while (i < content->height)
 	{
 		content->z_axis[i] = (int *)malloc(sizeof(int) * (content->width));
-		// long long time = get_time();
 		line = get_next_line(file_descriptor);
-		// printf("gnl time diff %lld\n", get_time() - time);
 		fill_z_axis(content->z_axis[i], line);
 		free(line);
 		i++;
