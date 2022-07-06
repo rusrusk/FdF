@@ -6,7 +6,7 @@
 /*   By: rkultaev <rkultaev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 14:37:55 by rkultaev          #+#    #+#             */
-/*   Updated: 2022/07/06 17:32:49 by rkultaev         ###   ########.fr       */
+/*   Updated: 2022/07/06 17:37:35 by rkultaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include "libft_fdf/libft.h"
+# include "libft42_fdf/libft.h"
 # include "minilibx_macos/mlx.h"
 # include <stdarg.h>
 # include <math.h>

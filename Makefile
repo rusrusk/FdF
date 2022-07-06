@@ -6,7 +6,7 @@
 #    By: rkultaev <rkultaev@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/26 15:34:15 by rkultaev          #+#    #+#              #
-#    Updated: 2022/07/04 10:54:39 by rkultaev         ###   ########.fr        #
+#    Updated: 2022/07/06 17:38:44 by rkultaev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fdf
 
 HEADER = fdf.h
 
-LIBFTA = libft_FdF/libft.a
+LIBFTA = libft42_fdf/libft.a
 
 MINILIBX_MAC = minilibx_macos/libmlx.a
 
@@ -32,7 +32,7 @@ CFLAGS = -Wall -Werror -Wextra -g
 
 
 $(NAME) : $(OBJ) $(HEADER)
-		make bonus -C libft_FdF/
+		make bonus -C libft42_fdf/
 		make -C minilibx_macos
 		$(CC) $(CFLAGS) $(OBJ) $(LIBFTA) $(MINILIBX_MAC) -framework OpenGl -framework AppKit -o $(NAME) 
 		
@@ -42,11 +42,11 @@ all: $(NAME)
 
 clean :
 	rm -f $(OBJ)
-	make clean -C libft_FdF/
+	make clean -C libft42_fdf/
 	
 fclean : clean
 	rm -f $(NAME)
-	make fclean -C libft_FdF/
+	make fclean -C libft42_fdf/
 
 re : fclean all
 
