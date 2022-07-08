@@ -6,7 +6,7 @@
 #    By: rkultaev <rkultaev@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/26 15:34:15 by rkultaev          #+#    #+#              #
-#    Updated: 2022/07/06 17:38:44 by rkultaev         ###   ########.fr        #
+#    Updated: 2022/07/07 20:20:51 by rkultaev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ CFLAGS = -Wall -Werror -Wextra -g
 $(NAME) : $(OBJ) $(HEADER)
 		make bonus -C libft42_fdf/
 		make -C minilibx_macos
-		$(CC) $(CFLAGS) $(OBJ) $(LIBFTA) $(MINILIBX_MAC) -framework OpenGl -framework AppKit -o $(NAME) 
+		$(CC) $(CFLAGS) $(OBJ) $(LIBFTA) $(MINILIBX_MAC) -framework OpenGl -framework AppKit -o $(NAME) -O3
 		
 
 

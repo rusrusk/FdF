@@ -6,7 +6,7 @@
 /*   By: rkultaev <rkultaev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 15:05:57 by rkultaev          #+#    #+#             */
-/*   Updated: 2022/07/06 16:15:59 by rkultaev         ###   ########.fr       */
+/*   Updated: 2022/07/08 12:05:53 by rkultaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	find_height(char	*file)
 	char	*line;
 
 	file_descriptor = open(file, O_RDONLY, 0);
+	if (file_descriptor == -1)
+		error_message("Error");
 	line = get_next_line(file_descriptor);
 	height = 0;
 	while (line)
@@ -28,6 +30,7 @@ int	find_height(char	*file)
 		line = get_next_line(file_descriptor);
 	}
 	free(line);
+	close(file_descriptor);
 	return (height);
 }
 
@@ -103,4 +106,10 @@ void	read_file(char *file, t_fdf *content)
         }
         fprintf(stderr, "%c", '\n');
         y++;
+*/
+
+/*
+After opening the file, utilize get_next_line() function to read each 
+processed line and pass it to helper functions to generate rows based on the 
+data received and add them to the map points array.
 */

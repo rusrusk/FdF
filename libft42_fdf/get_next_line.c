@@ -6,7 +6,7 @@
 /*   By: rkultaev <rkultaev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:13:50 by rkultaev          #+#    #+#             */
-/*   Updated: 2022/07/06 16:13:48 by rkultaev         ###   ########.fr       */
+/*   Updated: 2022/07/07 20:15:12 by rkultaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static char	*read_data(char *static_buff, int fd)
 	int		read_outcome;
 
 	read_outcome = 1;
-	ptr_buffer = (char *)ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	ptr_buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	while ((ft_strchr(static_buff, '\n') == NULL) && read_outcome != 0)
 	{
 		read_outcome = read(fd, ptr_buffer, BUFFER_SIZE);

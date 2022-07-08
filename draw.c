@@ -6,7 +6,7 @@
 /*   By: rkultaev <rkultaev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 17:40:35 by rkultaev          #+#    #+#             */
-/*   Updated: 2022/07/06 16:47:14 by rkultaev         ###   ########.fr       */
+/*   Updated: 2022/07/07 19:12:26 by rkultaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	isometric_scale(int z, int z1, t_fdf *content)
 
 void	united_lines_bresenham(t_fdf *content)
 {
-	float	x_move;
-	float	y_move;
+	float	x_delta;
+	float	y_delta;
 	int		max;
 	int		z;
 	int		z1;
@@ -38,17 +38,17 @@ void	united_lines_bresenham(t_fdf *content)
 	set_up_color(content, z, z1, content->color_flag);
 	isometric_scale(z, z1, content);
 	shift(content);
-	x_move = content->x1_axis - content->x_axis;
-	y_move = content->y1_axis - content->y_axis;
-	max = max_move(module((int)x_move), module((int)y_move));
-	x_move = x_move / max;
-	y_move = y_move / max;
+	x_delta = content->x1_axis - content->x_axis;
+	y_delta = content->y1_axis - content->y_axis;
+	max = max_move(module((int)x_delta), module((int)y_delta));
+	x_delta = x_delta / max;
+	y_delta = y_delta / max;
 	while ((int)(content->x_axis - content->x1_axis)
 			|| (int)(content->y_axis - content->y1_axis))
 	{
 		custom_mlx(content, content->x_axis, content->y_axis, content->color);
-		content->x_axis = content->x_axis + x_move;
-		content->y_axis = content->y_axis + y_move;
+		content->x_axis = content->x_axis + x_delta;
+		content->y_axis = content->y_axis + y_delta;
 	}
 }
 
